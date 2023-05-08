@@ -34,7 +34,7 @@ public class playermovement : MonoBehaviour
 
         if(isRunning == true)
         {
-            moveSpeed = 3f;
+            moveSpeed = 2f;
         }
 
         if(isRunning == false)
