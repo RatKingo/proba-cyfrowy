@@ -6,6 +6,8 @@ using TMPro;
 
 public class Analyse : MonoBehaviour
 {
+    [SerializeField]
+    private playermovement movement;
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
@@ -25,6 +27,7 @@ public class Analyse : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
+            movement.enabled = false;
             if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
@@ -47,6 +50,7 @@ public class Analyse : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
+        movement.enabled = true;
     }
 
     IEnumerator Typing()

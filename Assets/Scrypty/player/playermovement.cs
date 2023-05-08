@@ -7,6 +7,7 @@ public class playermovement : MonoBehaviour
    public float moveSpeed = 4f;
 
    private bool isWalking;
+   public static bool isRunning;
 
    public Rigidbody2D rb;
    private Animator anim;
@@ -31,6 +32,15 @@ public class playermovement : MonoBehaviour
         Vector3 moveDir = new Vector3(movement.x, movement.y).normalized;
         transform.position += moveDir * moveSpeed * Time.fixedDeltaTime;
 
+        if(isRunning == true)
+        {
+            moveSpeed = 3f;
+        }
+
+        if(isRunning == false)
+        {
+            moveSpeed = 1f;
+        }
 
     }
 
