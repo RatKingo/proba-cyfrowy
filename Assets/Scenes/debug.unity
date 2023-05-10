@@ -11336,6 +11336,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 1410160246}
+    - target: {fileID: 1623912631578659215, guid: 03fd71b3b91f3ca49b490393ca4ab7df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3372971429518656795, guid: 03fd71b3b91f3ca49b490393ca4ab7df, type: 3}
       propertyPath: m_Value
       value: 100
