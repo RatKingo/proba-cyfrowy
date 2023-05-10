@@ -6,6 +6,8 @@ public class enemy1AI : MonoBehaviour
 {
     private bool isWalking;
 
+    public float moveSpeed = 2f;
+
     public GameObject player;
     private Animator anim;
     public float speed;
