@@ -10,6 +10,10 @@ public class healthAlex : MonoBehaviour
 
     public healthbar hpbar;
 
+    private bool isDead;
+
+    public DeathScreen gameManager;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -22,6 +26,13 @@ public class healthAlex : MonoBehaviour
         {
             RemoveHealth(20);
         }
+
+        if (currentHealth <= 0 && !isDead)
+        {
+            isDead = true;
+            gameObject.SetActive(false);
+            gameManager.gameOver();
+        }
     }
 
     public void RemoveHealth (int amount)
@@ -29,6 +40,13 @@ public class healthAlex : MonoBehaviour
         currentHealth -=amount;
 
         hpbar.SetHealth(currentHealth);
+    }
+
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
     }
 
 }
